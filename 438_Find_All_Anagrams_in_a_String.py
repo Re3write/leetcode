@@ -1,48 +1,6 @@
 s = "cbaebabacd"
 p = "abc"
 
-# length_p = len(p)
-# length_s = len(s)
-# # if length_s < length_p:
-# #     return []
-# result = []
-# for i in range(length_s):
-#     set_p = list(p)
-#     if i <= (length_s - length_p):
-#         set_s = [s[index] for index in range(i, i + length_p)]
-#         if sorted(set_p) == sorted(set_s):
-#             result.append(i)
-# print(result)
-
-length_p = len(p)
-length_s = len(s)
-# if length_s < length_p:
-#     return []
-dict = {}
-dict_find = {}
-for i in p:
-    dict[i] = dict.get(i, 0) + 1
-print(dict)
-
-result = []
-for i in range(length_s - length_p + 1):
-    substring = s[i:i + length_p]
-    print(i)
-    print(substring)
-    for st in substring:
-        if st in dict:
-            dict_find[st] = dict_find.get(st, 0) + 1
-    flag = 1
-
-    for key in dict:
-        if key not in dict_find:
-            flag = 0
-        if key in dict_find and dict[key] != dict_find[key]:
-            flag = 0
-    if flag == 1:
-        result.append(i)
-    dict_find.clear()
-print(result)
 
 
 # class Solution:
