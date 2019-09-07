@@ -1,0 +1,22 @@
+#栈, 可以用于存储一组状态
+
+class Solution:
+    def decodeString(self, s: str) -> str:
+        stack = []
+        length = len(s)
+        result = ''
+        mutil = 0
+        for i in s:
+            if '0' <= i <= '9':
+                mutil = 10 * mutil + int(i)
+            elif i == '[':
+                stack.append((mutil, result))
+                result = ''
+                mutil = 0
+            elif i == ']':
+                res = stack.pop()
+                result = res[1] + res[0] * result
+            else:
+                result += i
+
+        return result
