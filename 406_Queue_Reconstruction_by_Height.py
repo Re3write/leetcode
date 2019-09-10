@@ -1,3 +1,7 @@
-a = [[7, 1], [4, 4], [7, 0], [5, 0], [6, 1], [5, 2]]
-
-print(sorted(a,key=lambda x:(x[0],x[1])))
+class Solution:
+    def reconstructQueue(self, people: List[List[int]]) -> List[List[int]]:
+        people.sort(key = lambda x: [-x[0], x[1]])
+        res = []
+        for p in people:
+            res.insert(p[1], p)
+        return res
