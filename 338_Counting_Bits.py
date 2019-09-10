@@ -1,5 +1,5 @@
+#动态规划 位运算
 num = 5
-
 res = [0 for _ in range(num + 1)]
 
 res[0] = 0
