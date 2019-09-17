@@ -1,1 +1,2 @@
-print(5 and 2)
+middel = 0 + 5/2
+print(middel)
