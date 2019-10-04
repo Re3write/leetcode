@@ -20,32 +20,23 @@ class Solution:
 
 
 
-#快慢指针 翻转链表
+#快慢指针 翻转链表设置快慢指针
+# 每次快指针增加两个，慢指针增加一个
+# 这样当快指针结尾时，慢指针指向了链表的中间
+# 用慢指针逆序链表的后半部分，利用Python交换的特性，不需要额外的tmp结点
+# 一个从头开始，一个从中间开始，判断两者是否相同
+
 class Solution:
     def isPalindrome(self, head: ListNode) -> bool:
-        # 预处理
-        if head == None or head.next == None:
-            return True
-        recnct,slow,fast = head,head,head
-        newhead = None
-        # 遍历链表
-        while fast and fast.next:
-            fast = fast.next.next
-            tmp = slow
+        slow,fast,prev = head,head,None
+        while fast is not None:
             slow = slow.next
-            # 反转链表（前半部分）
-            tmp.next = newhead
-            newhead = tmp
-        # 连接中间断裂的链表
-        recnct.next = slow
-        ps = newhead
-        #判断链长为奇为偶？
-        pf = slow.next if fast else slow
-        # 遍历前半部分、后半部分链表，判断对应值是否相等？
-        while pf:
-            if ps.val != pf.val:
+            fast = fast.next.next if fast.next is not None else fast.next
+        while slow is not None:
+            slow.next, slow, prev= prev, slow.next, slow
+        while head and prev:
+            if head.val != prev.val:
                 return False
-            ps = ps.next
-            pf = pf.next
+            head = head.next
+            prev = prev.next
         return True
-
