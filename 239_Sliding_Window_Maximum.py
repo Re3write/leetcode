@@ -14,50 +14,36 @@ class Solution:
 
 #双端队列 https://leetcode-cn.com/problems/sliding-window-maximum/solution/dan-diao-dui-lie-by-labuladong/
 #每次push进去都把后边比他小的挤压掉，第一个一直都是最大的
-class MonotonicQueue {
-private:
-    deque < int > data;
-    public:
-    void
+from collections import deque
 
+class Solution:
+    def maxSlidingWindow(self, nums: 'List[int]', k: 'int') -> 'List[int]':
+        # base cases
+        n = len(nums)
+        if n * k == 0:
+            return []
+        if k == 1:
+            return nums
 
-push(int
-n) {
-while (!data.empty() & & data.back() < n)
-data.pop_back();
-data.push_back(n);
-}
+        def clean_deque(i):
+            # remove indexes of elements not from sliding window
+            if deq and deq[0] == i - k:
+                deq.popleft()
 
-int
-max()
-{
-return data.front();}
+            # remove from deq indexes of all elements
+            # which are smaller than current element nums[i]
+            while deq and nums[i] > nums[deq[-1]]:
+                deq.pop()
 
-void
-pop(int
-n) {
-if (!data.empty() & & data.front() == n)
-data.pop_front();
-}
-};
-
-vector < int > maxSlidingWindow(vector < int > & nums, int
-k) {
-    MonotonicQueue
-window;
-vector < int > res;
-for (int i = 0; i < nums.size();
-i + +) {
-if (i < k - 1) {// 先填满窗口的前 k - 1
-window.push(nums[i]);
-} else {// 窗口向前滑动
-window.push(nums[i]);
-res.push_back(window.max());
-window.pop(nums[i - k + 1]);
-}
-}
-return res;
-}
-
+        # init deque and output
+        deq = deque()
+        max_idx = 0
+        for i in range(k):
+            clean_deque(i)
+            deq.append(i)
+            # compute max in nums[:k]
+            if nums[i] > nums[max_idx]:
+                max_idx = i
+        output = [nums[max_idx]]
 
 
