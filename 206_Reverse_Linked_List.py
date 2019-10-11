@@ -38,7 +38,7 @@ class Solution:
 
 
 
-#多元赋值逆转链表0
+#多元赋值逆转链表 python多元赋值 在赋值过程中右边的值不会变化，因为在赋值前提前做好了计算
 class Solution:
     def reverseList(self, head):
         """
