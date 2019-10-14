@@ -26,7 +26,7 @@ class MinStack:
         # 辅助栈
         self.helper = []
 
-    def push(self, x):
+    def push(self, x):   #每次压入数据，helper同步压入目前数组的最小值
         self.data.append(x)
         if len(self.helper) == 0 or x <= self.helper[-1]:
             self.helper.append(x)
