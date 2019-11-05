@@ -1,4 +1,4 @@
-#逆向遍历，栈
+#栈计数
 
 class Solution:
     def dailyTemperatures(self, T: List[int]) -> List[int]:
