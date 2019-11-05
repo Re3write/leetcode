@@ -29,7 +29,6 @@ class Solution:
 
 
 
-
 #逆中序遍历
 class Solution:
     def convertBST(self, root: TreeNode) -> TreeNode:
