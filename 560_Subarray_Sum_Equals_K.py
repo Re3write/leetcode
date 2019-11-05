@@ -1,4 +1,5 @@
-# len_nums=[0 for _ in nums]
+#借助累计数组sum 0-i的累加和
+#解析网址https://leetcode-cn.com/problems/subarray-sum-equals-k/solution/he-wei-kde-zi-shu-zu-by-leetcode/
 
 nums = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 k = 0
@@ -26,8 +27,7 @@ for index, number in enumerate(nums):
 print(count)
 
 
-#借助累计数组sum 0-i的累加和
-#解析网址https://leetcode-cn.com/problems/subarray-sum-equals-k/solution/he-wei-kde-zi-shu-zu-by-leetcode/
+
 
 ## the right 解法
 _dict = {}
