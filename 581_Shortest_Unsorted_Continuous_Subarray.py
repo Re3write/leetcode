@@ -1,6 +1,6 @@
 import numpy as np
 # print([True if x != 0 else False for x in result]) 列表生成式
-
+#排序前后相减
 import numpy as np
 
 
