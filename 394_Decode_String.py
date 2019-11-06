@@ -1,5 +1,4 @@
 #栈, 可以用于存储一组状态
-
 class Solution:
     def decodeString(self, s: str) -> str:
         stack = []
