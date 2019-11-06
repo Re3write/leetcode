@@ -14,7 +14,6 @@ j = 0
 #         return True
 # return False
 
-
 #二分法
 for i in range(len(matrix)):
     left = 0
