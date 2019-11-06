@@ -4,7 +4,7 @@ target = -1
 i = len(matrix) - 1
 j = 0
 
-#右下角或者左上角排除法查找
+#左下角或者右上角排除法查找
 # while i >= 0 and j <= len(matrix[0]) - 1:
 #     if target < matrix[i][j]:
 #         i -= 1
