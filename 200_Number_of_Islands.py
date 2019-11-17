@@ -1,3 +1,4 @@
+#或者访问过的原矩阵赋值为0
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
         row = len(grid)
