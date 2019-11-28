@@ -12,7 +12,7 @@ class Solution:
             if i == 0:
                nums[start] = 0
                start += 1
-            elif i ==1:
+            elif i == 1:
                 count += 1
         nums[start:start+count] = [1]*count
         nums[start+count:] = [2]*(length-start-count)
