@@ -1,7 +1,7 @@
-class Solution(object):
+class Solution:
     def longestConsecutive(self, nums):
         hash_dict = dict()
-
+        nums = set(nums)
         max_length = 0
         for num in nums:
             if num not in hash_dict:
@@ -12,7 +12,7 @@ class Solution(object):
                 if cur_length > max_length:
                     max_length = cur_length
 
-                hash_dict[num] = cur_length
+                # hash_dict[num] = cur_length
                 hash_dict[num - left] = cur_length
                 hash_dict[num + right] = cur_length
 
