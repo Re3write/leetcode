@@ -15,7 +15,7 @@ class Solution:
                 return min(max(-2 ** 31, flag * middle), 2 ** 31 - 1)
 
 
-#或者每次让商加倍
+#或者每次让商加倍 亦或
 
 class Solution:
     def divide(self, divd: int, dior: int) -> int:
