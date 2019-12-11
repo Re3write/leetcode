@@ -1,5 +1,6 @@
 #https://leetcode-cn.com/problems/implement-strstr/solution/kmp-suan-fa-xiang-jie-by-labuladong/
 #KMP详解
+
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
         if not needle:
